@@ -1,0 +1,5 @@
+export const UNIT_RESOURCE = 'UNIT_RESOURCE'
+export const UNIT_CREATE = 'UNIT_CREATE'
+export const UNIT_UPDATE = 'UNIT_UPDATE'
+export const UNIT_DELETE = 'UNIT_DELETE'
+export const UNIT_DETAIL = 'UNIT_DETAIL'

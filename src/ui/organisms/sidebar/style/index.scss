@@ -1,0 +1,60 @@
+@import '../../../atoms/color/index.scss';
+.sidebar-item {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    height: 50px;
+    line-height: 50px;
+    color: #e0e0e0;
+    display: flex;
+    width: 100%;
+    .parent-label {
+        padding-left: 10px;
+        color: #e0e0e0;
+        text-decoration: none;
+        font-size: 13px;
+        width: 100%;
+        display: block;
+        transition: 0s;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer */
+        -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+        -webkit-user-select: none; /* Chrome, Safari, and Opera */
+        -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+        & > .icon-up {
+            height: 10px;
+            fill: #cccccc;
+        }
+    }
+
+    .parent-label:hover {
+        cursor: pointer;
+        color: $white;
+    }
+}
+.active {
+    > .parent-item {
+        height: 100% !important;
+    }
+    .parent-label {
+        & .icon-up {
+            transition: 0.3s;
+            transform: rotate(90deg);
+        }
+    }
+}
+.parent-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .children-item {
+        padding-right: 0px !important;
+    }
+}

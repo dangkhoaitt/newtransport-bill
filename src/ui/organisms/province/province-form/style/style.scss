@@ -1,0 +1,165 @@
+@import '../../../../atoms/color/index.scss';
+.modal.modal-create-province {
+    .modal-content {
+        width: 95%;
+        @media (max-width: 479px) {
+            padding: 10px;
+        }
+        @media (min-width: 1024px) {
+            width: 900px;
+        }
+        input {
+            margin: 0;
+        }
+        .province-form-create {
+            .card {
+                margin-bottom: 10px;
+                box-shadow: none;
+                .card-header {
+                    .card-title {
+                        font-weight: bold;
+                    }
+                }
+                .card-content {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    padding: 12px 0;
+                    .form-container {
+                        @media (min-width: 480px) {
+                            display: flex;
+                            label {
+                                position: relative;
+                                top: 10px;
+                            }
+                        }
+                        margin-bottom: 15px;
+                        width: 100%;
+                        @media (min-width: 768px) {
+                            width: 49%;
+                        }
+                        .form-label {
+                            width: 140px;
+                            font-weight: 500;
+                            white-space: nowrap;
+                        }
+                        & > .form-value {
+                            width: 100%;
+                            margin-top: 5px;
+                            @media (min-width: 480px) {
+                                margin-top: 0;
+                                width: calc(100% - 140px);
+                            }
+                        }
+                    }
+                    .district-item-form {
+                        width: 100%;
+                        .form-value {
+                            width: 100%;
+                        }
+                    }
+                }
+                @media (min-width: 768px) {
+                    &:first-child {
+                        margin-bottom: 0;
+                        .card-content {
+                            .form-container {
+                                &:first-child {
+                                    width: 30%;
+                                }
+                                &:nth-child(2) {
+                                    width: 37%;
+                                }
+                                width: 30%;
+                                &:last-child {
+                                    .form-label {
+                                        width: 80px;
+                                    }
+                                    .form-value {
+                                        width: calc(100% - 80px);
+                                    }
+                                }
+                                .form-value {
+                                    position: relative;
+                                    .error {
+                                        position: absolute;
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .district-card {
+                .card-header {
+                    .card-title {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        font-weight: 500;
+                        text-decoration: underline;
+                        color: $hoverPrimary;
+                        font-style: italic;
+
+                        .icon-title-add:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .card-content {
+                    display: flex;
+                    justify-content: space-between;
+                    .district-item {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        align-items: center;
+                        span:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    .table {
+                        tbody {
+                            .col-code {
+                                width: 100px;
+                                input {
+                                    text-align: center;
+                                }
+                            }
+                            .col-icon {
+                                width: 100px;
+                                text-align: center;
+                                span:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                            tr {
+                                td {
+                                    padding: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & > button {
+                float: right;
+                &:disabled {
+                    cursor: not-allowed;
+                    user-select: none;
+                    color: rgba(0, 0, 0, 0.25);
+                    background-color: $default;
+                }
+                margin-left: 12px;
+            }
+        }
+    }
+}
+.modal.modal-create-detail {
+    .card .card-content .form-parent {
+        display: none !important;
+    }
+}

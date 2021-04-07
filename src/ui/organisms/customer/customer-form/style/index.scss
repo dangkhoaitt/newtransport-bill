@@ -1,0 +1,65 @@
+@import '../../../../atoms/color/index.scss';
+
+.modal.customer-add,
+.modal.modal-edit-customer {
+    font-family: Roboto, Segoe UI, GeezaPro, 'DejaVu Serif', 'sans-serif', -apple-system, BlinkMacSystemFont;
+    .modal-content {
+        width: 95%;
+        @media (max-width: 479px) {
+            padding: 10px;
+        }
+        @media (min-width: 1024px) {
+            width: 900px;
+        }
+    }
+}
+.customer-form {
+    font-size: 14px;
+    .selected-value,
+    input {
+        font-size: 14px;
+    }
+    .content-form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 12px 0;
+        .input-validate {
+            @media (min-width: 480px) {
+                display: flex;
+                label {
+                    position: relative;
+                    top: 10px;
+                }
+            }
+            margin-bottom: 15px;
+            width: 100%;
+            @media (min-width: 768px) {
+                width: 49%;
+            }
+            label {
+                width: 140px;
+                font-weight: 500;
+                white-space: nowrap;
+            }
+            & > div {
+                width: 100%;
+                margin-top: 5px;
+                @media (min-width: 480px) {
+                    margin-top: 0;
+                    width: calc(100% - 140px);
+                }
+            }
+        }
+    }
+    & > button {
+        float: right;
+        &:disabled {
+            cursor: not-allowed;
+            user-select: none;
+            color: rgba(0, 0, 0, 0.25);
+            background-color: $default;
+        }
+    }
+}

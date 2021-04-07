@@ -1,0 +1,110 @@
+@import '../../color/index.scss';
+@mixin linkBgColor($bg, $color, $fill, $hover_bg, $hover_border, $hover_color, $focus_box, $focus_outline, $active) {
+    background-color: $bg;
+    color: $color;
+    fill: $fill;
+    &:hover {
+        background-color: $hover_bg;
+        border-color: $hover_border;
+        color: $hover_color;
+    }
+    &:focus {
+        box-shadow: $focus_box;
+        outline: $focus_outline;
+    }
+    &:active {
+        box-shadow: $active;
+    }
+}
+.link {
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    &.link-text-primary {
+        color: $primary;
+    }
+    &.link-text-default {
+        color: $default;
+    }
+    &.link-text-danger {
+        color: $danger;
+    }
+    &.link-text-warning {
+        color: $warning;
+    }
+    &.link-text-success {
+        color: $success;
+    }
+    &[class*='link-bg'] {
+        padding: 10px 16px;
+        border-radius: 4px;
+        font-size: 0.875rem;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+            box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+    &.link-bg-primary {
+        @include linkBgColor(
+            $primary,
+            $white,
+            $white,
+            $hoverPrimary,
+            transparent,
+            $white,
+            0 0 0 0.125em rgba($primary, 0.5),
+            none,
+            none
+        );
+    }
+    &.link-bg-default {
+        @include linkBgColor(
+            $default,
+            $black,
+            $black,
+            $hoverDefault,
+            transparent,
+            $black,
+            0 0 0 0.125em rgba($default, 0.5),
+            none,
+            none
+        );
+    }
+    &.link-bg-danger {
+        @include linkBgColor(
+            $danger,
+            $white,
+            $white,
+            $hoverDanger,
+            transparent,
+            $white,
+            0 0 0 0.125em rgba($danger, 0.5),
+            none,
+            none
+        );
+    }
+    &.link-bg-warning {
+        @include linkBgColor(
+            $warning,
+            $black,
+            $black,
+            $hoverWarning,
+            transparent,
+            $black,
+            0 0 0 0.125em rgba($warning, 0.5),
+            none,
+            none
+        );
+    }
+    &.link-bg-success {
+        @include linkBgColor(
+            $success,
+            $white,
+            $white,
+            $hoverSuccess,
+            transparent,
+            $white,
+            0 0 0 0.125em rgba(0, 209, 178, 0.5),
+            none,
+            none
+        );
+    }
+}

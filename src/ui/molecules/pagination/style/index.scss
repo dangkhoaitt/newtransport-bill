@@ -1,0 +1,99 @@
+@import '../../../atoms/color/index.scss';
+@mixin setWidthHeight($width, $height) {
+    width: $width;
+    height: $height;
+    line-height: $width;
+}
+@mixin hoverBg {
+    background-color: $hoverDanger;
+    color: $white;
+}
+.empty-table-data {
+    background-color: $bgPagination;
+    font-size: 15px;
+    padding: 20px 16px;
+    color: $dark;
+    width: 100%;
+}
+#pagination-custom {
+    display: inline-block;
+    font-size: 13px;
+    padding: 0;
+    white-space: normal;
+    width: 100%;
+    color: $black;
+    opacity: 0.87;
+    background-color: $bgPagination;
+    text-align: right;
+    border: none;
+    ul {
+        padding: 0 10px;
+        li {
+            display: inline-block;
+            margin: 2px;
+            list-style: none;
+            user-select: none;
+            outline: none;
+            a {
+                @include setWidthHeight(36px, 36px);
+                display: block;
+                font-size: 14px;
+                text-align: center;
+                background-color: $bgLinkPagination;
+                cursor: pointer;
+                &:hover {
+                    @include hoverBg;
+                }
+            }
+            button {
+                @include setWidthHeight(36px, 36px);
+                background-color: $btnPagination;
+                border: none;
+                display: block;
+                font-size: 14px;
+                text-align: center;
+                &:hover {
+                    @include hoverBg;
+                }
+            }
+            &.rc-pagination-item-active > a {
+                background-color: $hoverDanger;
+                border-color: $white;
+                color: $white;
+            }
+            &.rc-pagination-options {
+                margin: 0;
+            }
+            &:first-child {
+                float: left;
+                position: relative;
+                top: 8px;
+                font-size: 15px;
+            }
+            &.rc-pagination-next,
+            &.rc-pagination-prev {
+                @include setWidthHeight(36px, 36px);
+                background-color: $bgLinkPagination;
+                cursor: pointer;
+                text-align: center;
+                position: relative;
+                top: -1px;
+                transition: 0.3s;
+                svg {
+                    height: 10px;
+                    fill: $darkGrey;
+                    transition: 0.3s;
+                }
+                &:hover {
+                    @include hoverBg;
+                    svg {
+                        fill: $white;
+                    }
+                }
+                &.rc-pagination-disabled {
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}

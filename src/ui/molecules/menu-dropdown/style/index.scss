@@ -1,0 +1,69 @@
+@import '../../../atoms/color/index.scss';
+.menu-dropdown {
+    position: relative;
+    top: 2px;
+    user-select: none;
+    .label-dropdown {
+        border-radius: 0;
+        background: $white;
+        position: relative;
+        top: -1px;
+        padding: 6px 12px 8px;
+        color: $black;
+        transition: 0.3s;
+        &:focus {
+            box-shadow: none;
+        }
+        &:hover {
+            background: $default;
+        }
+        svg {
+            fill: $black;
+            &:first-child {
+                margin-right: 5px;
+                height: 14px;
+                position: relative;
+                top: 2px;
+            }
+            &:last-child {
+                margin-left: 5px;
+                height: 8px;
+            }
+        }
+    }
+    .info-menu {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+            0 3px 14px 2px rgba(0, 0, 0, 0.12);
+        background: $white;
+        min-width: 170px;
+        z-index: 7000;
+        -moz-transition: height 0.3s;
+        -ms-transition: height 0.3s;
+        -o-transition: height 0.3s;
+        -webkit-transition: height 0.3s;
+        transition: height 0.3s;
+        height: 0;
+        overflow: hidden;
+        a {
+            text-decoration: none;
+            padding: 11px 15px;
+            font-size: 14px;
+            color: $black;
+            display: flex;
+            svg {
+                height: 14px;
+                fill: $black;
+                margin-right: 5px;
+            }
+            &:last-child {
+                padding-left: 17px;
+            }
+            &:hover {
+                background: $default;
+            }
+        }
+    }
+}

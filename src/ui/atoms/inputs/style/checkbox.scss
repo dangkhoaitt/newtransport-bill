@@ -1,0 +1,108 @@
+//checkbox
+.checkbox {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        &:checked {
+            ~ {
+                .checkbox-custom {
+                    background-color: $primary;
+                    border-radius: 3px;
+                    -webkit-transform: rotate(0deg) scale(1);
+                    -ms-transform: rotate(0deg) scale(1);
+                    transform: rotate(0deg) scale(1);
+                    opacity: 1;
+                    border: 2px solid $primary;
+                    &::after {
+                        -webkit-transform: rotate(45deg) scale(1);
+                        -ms-transform: rotate(45deg) scale(1);
+                        transform: rotate(45deg) scale(1);
+                        opacity: 1;
+                        left: 4px;
+                        top: -1px;
+                        width: 6px;
+                        height: 12px;
+                        border: solid $white;
+                        border-width: 0 2px 2px 0;
+                        background-color: transparent;
+                        border-radius: 3px;
+                    }
+                    &::before {
+                        left: -3px;
+                        top: -3px;
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 3px;
+                        -webkit-transform: scale(2);
+                        -ms-transform: scale(2);
+                        transform: scale(2);
+                        opacity: 0;
+                        z-index: 999;
+                        transition: all 0.3s ease-out;
+                        -webkit-transition: all 0.3s ease-out;
+                        -moz-transition: all 0.3s ease-out;
+                        -ms-transition: all 0.3s ease-out;
+                        -o-transition: all 0.3s ease-out;
+                    }
+                }
+            }
+        }
+        &:focus ~ .checkbox-custom {
+            border: 2px solid $primary;
+        }
+    }
+    .checkbox-custom {
+        border: 2px solid $borderLine;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 20px;
+        width: 20px;
+        background-color: transparent;
+        border-radius: 3px;
+        transition: all 0.3s ease-out;
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        &::after {
+            position: absolute;
+            content: '';
+            left: 12px;
+            top: 12px;
+            height: 0px;
+            width: 0px;
+            border-radius: 3px;
+            border: solid $primary;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(0deg) scale(0);
+            -ms-transform: rotate(0deg) scale(0);
+            transform: rotate(0deg) scale(0);
+            opacity: 1;
+            transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            left: 10px;
+            top: 10px;
+            width: 0px;
+            height: 0px;
+            border-radius: 3px;
+            border: 2px solid $primary;
+            -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+            transform: scale(0);
+        }
+    }
+}

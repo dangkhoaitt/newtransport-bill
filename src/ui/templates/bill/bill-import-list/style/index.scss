@@ -1,0 +1,57 @@
+@import '../../../../atoms/color/index.scss';
+#bill-import-list {
+    .customer-select-search {
+        padding: 12px;
+        margin-bottom: 10px;
+        .card-content > label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+    .bill-price {
+        font-weight: 600;
+    }
+    .btn-add-export {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        & {
+            > a {
+                margin-left: 10px;
+            }
+            > button {
+                background-color: #3b9ce8;
+                color: white;
+                fill: white;
+                &:hover {
+                    background-color: #56b1f7;
+                }
+            }
+        }
+    }
+    .empty-table-data {
+        background-color: $bgPagination;
+        font-size: 15px;
+        padding: 20px 16px;
+        color: $dark;
+        width: 100%;
+    }
+}
+.import-count {
+    display: flex;
+    align-items: center;
+
+    > span {
+        padding: 5px;
+    }
+    .valid-icon {
+        fill: green;
+    }
+    .invalid-icon {
+        fill: red;
+    }
+}
+.modal .confirm-groupbtn {
+    margin-top: 10px;
+}

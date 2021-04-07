@@ -1,0 +1,37 @@
+@import '../../../atoms/color/index.scss';
+.react-datepicker-component {
+    .react-datepicker-input {
+        border-radius: 0;
+        border: none;
+        background: none;
+        border-bottom: 1px solid $grey;
+        .button-wrapper {
+            .input-button {
+                color: $darkGrey;
+            }
+        }
+        &:hover,
+        &.is-open {
+            background: none;
+            border: none;
+            border-bottom: 1px solid $grey;
+        }
+        &.has-value input,
+        input {
+            font-weight: 500;
+            color: $black;
+            &::placeholder {
+                font-weight: 500;
+                color: $placeholder;
+            }
+            &::-webkit-input-placeholder {
+                font-weight: 500;
+                color: $placeholder;
+            }
+            &::-webkit-calendar-picker-indicator {
+                font-weight: 500;
+                color: $placeholder;
+            }
+        }
+    }
+}

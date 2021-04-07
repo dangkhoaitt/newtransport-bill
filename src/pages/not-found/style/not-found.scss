@@ -1,0 +1,40 @@
+@import '../../../ui/atoms/color/index.scss';
+
+#not-found-container {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    svg {
+        max-width: 516px;
+        @media (min-width: 319px) {
+            width: 75%;
+        }
+    }
+    a {
+        font-size: 18px;
+        color: $dark;
+        display: inline-block;
+        border: 1px solid $dark;
+        padding: 5px;
+        border-radius: 10px;
+        text-decoration: none;
+        @media (min-width: 427px) {
+            font-size: 25px;
+        }
+    }
+    a:hover {
+        color: $primary;
+        border-color: $primary;
+    }
+}
+
+@media (min-width: 319px) {
+    #not-found-container {
+        svg {
+            width: 75%;
+        }
+    }
+}

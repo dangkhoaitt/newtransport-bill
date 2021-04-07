@@ -1,0 +1,61 @@
+@import '../../../../atoms/color/index.scss';
+.modal-create-quote {
+    .modal-header {
+        span {
+            font-weight: bold;
+        }
+    }
+    #quotation-detail {
+        .btn-action {
+            text-align: right;
+            width: 100%;
+            margin-bottom: 10px;
+            @media (min-width: 450px) {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: unset;
+            }
+            .btn:disabled {
+                background-color: $secondary;
+                opacity: 0.6;
+                cursor: no-drop;
+            }
+            & > .btn {
+                margin-left: 5px;
+            }
+        }
+        .info {
+            width: 100%;
+            .input-item {
+                display: flex;
+                width: 100%;
+                padding: 10px 0 10px 0;
+                justify-content: flex-start;
+                border-bottom: 0.1px solid $default;
+                .label-item {
+                    min-width: 100px;
+                    white-space: nowrap;
+                    margin-right: 20px;
+                }
+                span {
+                    word-break: keep-all;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                }
+                a {
+                    word-break: break-all;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                }
+            }
+            .input-item:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

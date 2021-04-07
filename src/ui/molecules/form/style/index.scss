@@ -1,0 +1,14 @@
+@import '../../../../ui/atoms/color/index.scss';
+.input-validate {
+    label {
+        color: $dark;
+        &.require::after {
+            content: ' *';
+            color: $danger;
+        }
+    }
+    .error {
+        font-size: 13px;
+        color: $danger;
+    }
+}

@@ -1,0 +1,6 @@
+export const TRUCK_RESOURCE = 'TRUCK_RESOURCE'
+export const TRUCK_CREATE = 'TRUCK_CREATE'
+export const TRUCK_UPDATE = 'TRUCK_UPDATE'
+export const TRUCK_DELETE = 'TRUCK_DELETE'
+export const TRUCK_SEARCH = 'TRUCK_SEARCH'
+export const TRUCK_DETAIL = 'TRUCK_DETAIL'

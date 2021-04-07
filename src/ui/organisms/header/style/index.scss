@@ -1,0 +1,29 @@
+@import '../../../atoms/color/index.scss';
+#header {
+    height: 48px;
+}
+#header #hamburger.icon-menu {
+    font-size: 24px;
+    float: left;
+    line-height: 50px;
+}
+#header .right-header {
+    padding: 7px 10px;
+    position: fixed;
+    right: 0;
+}
+#header .list {
+    list-style: none;
+    cursor: pointer;
+}
+#header .header-list {
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    background-color: $primary;
+    color: $white;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+}

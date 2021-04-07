@@ -1,0 +1,113 @@
+@import '../../../../atoms/color/index.scss';
+#bill-list {
+    #search-inventory-bill {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 16px 10px;
+        & > span {
+            width: inherit;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            margin-right: 16px;
+            label {
+                margin-right: 8px;
+            }
+        }
+    }
+    .bill-price {
+        font-weight: 600;
+    }
+    .btn-add-export {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        & > button {
+            margin-right: 10px;
+            background-color: #3b9ce8;
+            color: white;
+            fill: white;
+            &:hover {
+                background-color: #56b1f7;
+            }
+        }
+    }
+    .search-my-unit {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        align-items: center;
+        & > button {
+            width: 50px;
+        }
+        label {
+            margin-right: 5px;
+        }
+    }
+    #search-bill {
+        position: relative;
+    }
+    .wrap-collapsible {
+        position: relative;
+        border-color: rgb(243, 243, 243);
+        padding: 0 10px;
+        margin-bottom: 10px;
+        background-color: $white;
+        .form-bill-search {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            .input-item {
+                width: 100%;
+                margin-top: 20px;
+                @media (min-width: 600px) {
+                    width: calc(50% - 16px);
+                }
+                @media (min-width: 1024px) {
+                    width: calc(25% - 16px);
+                }
+                .react-datepicker-input {
+                    height: 30px;
+                    .input-button {
+                        margin: 0 5px;
+                    }
+                    input {
+                        padding-left: 0;
+                    }
+                }
+            }
+            .search-date {
+                width: 100%;
+                @media (min-width: 1024px) {
+                    width: calc(50% - 10px);
+                }
+                .bill-search-date {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    & > div {
+                        width: calc(50% - 10px);
+                        input {
+                            padding-right: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        .btn-bill-search {
+            text-align: right;
+            position: static;
+            bottom: 0;
+            right: 16px;
+            padding-bottom: 16px;
+            @media (min-width: 1024px) {
+                position: absolute;
+            }
+        }
+    }
+}

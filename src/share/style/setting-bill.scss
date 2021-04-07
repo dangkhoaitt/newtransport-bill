@@ -1,0 +1,233 @@
+@import '../../ui/atoms/color/index.scss';
+#finance-list,
+#package-list,
+#progress-list,
+#province-list,
+#truck-list,
+#quotation-list,
+#unit-list {
+    width: 100%;
+    #search-quotation {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 6px;
+        right: 0;
+        & > button {
+            margin-left: 10px;
+        }
+    }
+    .btn-add {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .table {
+        tbody > tr {
+            td {
+                span {
+                    word-break: break-all;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    margin: 8px 0;
+                }
+                .name-quote {
+                    word-break: break-all;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    font-weight: 500;
+                    margin: 8px 0;
+                    cursor: pointer;
+                }
+                .name-quote:hover {
+                    color: $primary;
+                    color: $hoverPrimary;
+                    text-decoration: underline;
+                }
+            }
+            .district {
+                .item-district {
+                    max-width: 80%;
+                    position: absolute;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: Ellipsis;
+                    label {
+                        cursor: pointer;
+                        margin-right: 10px;
+                        color: $primary;
+                    }
+                    label:hover {
+                        text-decoration: underline;
+                        color: $hoverPrimary;
+                        font-weight: 540;
+                    }
+                }
+                .more {
+                    max-width: 100%;
+                    white-space: normal;
+                    text-overflow: initial;
+                    position: relative;
+                }
+
+                .click-more {
+                    display: block;
+                    float: right;
+                    right: 0;
+                    font-size: small;
+                    color: $primary;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+            .btn {
+                padding: 0px;
+            }
+        }
+    }
+    .list-common {
+        display: flex;
+        flex-direction: column;
+        .card {
+            margin-bottom: 20px;
+            width: 100%;
+            margin-bottom: 12px;
+            .card-header {
+                border-bottom: inset 0.5px;
+                width: 100%;
+                .card-title {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    .btn {
+                        padding: 2px;
+                    }
+                    span {
+                        font-weight: bolder;
+                        word-break: break-all;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        text-overflow: ellipsis;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                }
+            }
+            .card-content {
+                padding: 12px;
+                .input-item {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 15px;
+                    &:last-child {
+                        margin-bottom: 5px;
+                    }
+                    .label-item {
+                        font-weight: 500;
+                        min-width: 100px;
+                        margin-right: 10px;
+                        white-space: nowrap;
+                    }
+                    span {
+                        word-break: break-all;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        text-overflow: ellipsis;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+                    .district-item-mobile {
+                        text-align: right;
+                        line-height: 23px;
+                        label {
+                            cursor: pointer;
+                            margin-right: 10px;
+                            color: $primary;
+                            &:hover {
+                                text-decoration: underline;
+                                color: $hoverPrimary;
+                                font-weight: 400;
+                            }
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#quotation-list,
+#quotation-detail {
+    .tag.tag-primary {
+        cursor: pointer;
+        &:hover {
+            background-color: #276cda;
+        }
+        .tag-status {
+            height: 27px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .btn__label,
+            .btn__label__icon {
+                margin: 0;
+                padding: 1px 2px;
+            }
+            button {
+                padding: 0;
+                background: unset;
+                fill: #fff;
+                display: inline-block;
+                height: 25px;
+                svg {
+                    height: 13px;
+                }
+            }
+        }
+    }
+}
+#quotation-detail {
+    .tag.tag-primary .tag-status button {
+        height: unset;
+    }
+}
+#province-list {
+    & > .container-fluid {
+        border: none;
+        margin-bottom: 10px;
+        background-color: $white;
+        .collapsible-content {
+            position: relative;
+        }
+        .form-province-search {
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 16px;
+            justify-content: space-between;
+            .input-item {
+                width: 100%;
+                margin-top: 20px;
+                &:first-child {
+                    margin-top: 10px;
+                }
+                @media (min-width: 600px) {
+                    margin-top: 10px;
+                    width: calc(50% - 10px);
+                }
+            }
+        }
+        .btn-province-search {
+            text-align: right;
+            padding-bottom: 10px;
+        }
+    }
+}

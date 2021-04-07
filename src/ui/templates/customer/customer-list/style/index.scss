@@ -1,0 +1,84 @@
+@import '../../../../atoms/color/index.scss';
+#customer {
+    & > .btn-primary {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .table__th__cell > a {
+        margin: 8px 0;
+    }
+    #customer-list-mobile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .card {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            @media (min-width: 600px) {
+                width: calc(50% - 6px);
+            }
+            .card-header {
+                .card-title {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                padding: 0;
+                font-weight: 500;
+                width: 100%;
+                margin-bottom: 15px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid $borderLine;
+            }
+            .card-content {
+                .customer-input-item {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 18px;
+                    .label-item {
+                        font-weight: 500;
+                        white-space: nowrap;
+                        margin-right: 10px;
+                    }
+                    .value-item {
+                        word-break: break-all;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .container-fluid {
+        border: none;
+        margin-bottom: 10px;
+        background-color: $white;
+        .collapsible-content {
+            position: relative;
+        }
+        .form-customer-search {
+            display: flex;
+            flex-wrap: wrap;
+            padding-bottom: 16px;
+            justify-content: space-between;
+            .input-item {
+                width: 100%;
+                margin-top: 20px;
+                &:first-child {
+                    margin-top: 10px;
+                }
+                @media (min-width: 600px) {
+                    margin-top: 10px;
+                    width: calc(50% - 10px);
+                }
+                @media (min-width: 1024px) {
+                    width: calc(20% - 10px);
+                }
+            }
+        }
+        .btn-customer-search {
+            text-align: right;
+            padding-bottom: 10px;
+        }
+    }
+}

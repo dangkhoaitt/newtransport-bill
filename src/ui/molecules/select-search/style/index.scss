@@ -1,0 +1,94 @@
+@import '../../../atoms/color/index.scss';
+.data-over {
+    font-size: 14px;
+    position: relative;
+    & > .icon-down {
+        position: absolute;
+        height: 10px;
+        right: 1px;
+        top: 10px;
+        fill: $placeholder;
+        transition: 0.3s;
+    }
+    .option,
+    .data-input {
+        word-break: break-all;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .data-input {
+        border: none;
+        outline: 0;
+        width: 100%;
+        padding: 5px 12px 6px 0;
+        box-sizing: border-box;
+        border-bottom: 1px solid $grey;
+        &:focus ~ .icon-down {
+            transition: 0.3s;
+            transform: rotate(180deg);
+        }
+        & ~ .focus-border {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            border-radius: 1px;
+            transition: 0.4s;
+        }
+        &:focus ~ .focus-border {
+            background: $primary;
+            width: 100%;
+            transition: 0.4s;
+            left: 0;
+        }
+        &::placeholder {
+            color: $placeholder;
+            text-transform: initial;
+        }
+        &::-webkit-input-placeholder {
+            color: $placeholder;
+            text-transform: initial;
+        }
+        &::-webkit-calendar-picker-indicator {
+            opacity: 1;
+            color: $placeholder;
+        }
+    }
+
+    .data-list {
+        position: absolute;
+        z-index: 1000;
+        background: $white;
+        width: 100%;
+        top: calc(100% + 1px);
+        max-height: 200px;
+        overflow-y: scroll;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        .option-active {
+            background-color: $optionActive;
+        }
+        & > div {
+            padding: 4px 10px;
+            cursor: pointer;
+            &:hover,
+            &:focus {
+                outline: none;
+                background-color: $optionActive;
+            }
+        }
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $grey;
+        }
+    }
+}

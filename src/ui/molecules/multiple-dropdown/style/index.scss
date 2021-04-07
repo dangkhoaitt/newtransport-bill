@@ -1,0 +1,71 @@
+@import '../../../atoms/color/index.scss';
+.multiple-dropdown {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    .selected-value {
+        min-height: 42px;
+    }
+    & > .btn-delete-all {
+        position: absolute;
+        right: 0px;
+        bottom: 15px;
+        fill: $darkGrey;
+        height: 12px;
+        width: 12px;
+        padding: 0;
+        &:hover {
+            fill: $primary;
+        }
+    }
+    .data-list {
+        outline: none;
+        .option-active {
+            pointer-events: none;
+            cursor: none !important;
+            background-color: $optionActive;
+        }
+        &:focus ~ .icon-up {
+            transition: 0.3s;
+            transform: rotate(180deg);
+        }
+        & ~ .focus-border {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            border-radius: 1px;
+            transition: 0.4s;
+        }
+        &:focus ~ .focus-border {
+            background: $primary;
+            width: 100%;
+            transition: 0.4s;
+            left: 0;
+        }
+    }
+    .option-selected {
+        cursor: default;
+        padding: 0px 5px;
+        border-radius: 2px;
+        margin: 0px 5px 5px 0px;
+        display: inline-block;
+        background-color: $optionSelect;
+        .btn-cancel {
+            fill: $darkGrey;
+            height: 24px;
+            width: 14px;
+            padding: 0 0 0 4px;
+            &:hover {
+                fill: $primary;
+            }
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,208 @@
+@import '../../../atoms/color/index.scss';
+
+@mixin btnIconColor($fill, $hover, $focus_bg, $focus_box, $focus_outline, $active) {
+    fill: $fill;
+    &:hover {
+        background-color: $hover;
+    }
+    &:focus {
+        background-color: $focus_bg;
+        box-shadow: $focus_box;
+        outline: $focus_outline;
+    }
+    &:active {
+        box-shadow: $active;
+    }
+}
+
+@mixin btnColor($bg, $color, $fill, $hover_bg, $hover_border, $hover_color, $focus_box, $focus_outline, $active) {
+    background-color: $bg;
+    color: $color;
+    fill: $fill;
+    &:hover {
+        background-color: $hover_bg;
+        border-color: $hover_border;
+        color: $hover_color;
+    }
+    &:focus {
+        box-shadow: $focus_box;
+        outline: $focus_outline;
+    }
+    &:active {
+        box-shadow: $active;
+    }
+}
+
+.btn-default {
+    @include btnColor(
+        $default,
+        $black,
+        $black,
+        $hoverDefault,
+        transparent,
+        $black,
+        0 0 0 0.125em rgba($default, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-primary {
+    @include btnColor(
+        $primary,
+        $white,
+        $white,
+        $hoverPrimary,
+        transparent,
+        $white,
+        0 0 0 0.125em rgba($primary, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-info {
+    @include btnColor(
+        $info,
+        $white,
+        $white,
+        $hoverInfo,
+        transparent,
+        $white,
+        0 0 0 0.125em rgba($info, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-success {
+    @include btnColor(
+        $success,
+        $white,
+        $white,
+        $hoverSuccess,
+        transparent,
+        $white,
+        0 0 0 0.125em rgba(0, 209, 178, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-warning {
+    @include btnColor(
+        $warning,
+        $black,
+        $black,
+        $hoverWarning,
+        transparent,
+        $black,
+        0 0 0 0.125em rgba($warning, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-danger {
+    @include btnColor(
+        $danger,
+        $white,
+        $white,
+        $hoverDanger,
+        transparent,
+        $white,
+        0 0 0 0.125em rgba($danger, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-icon {
+    padding: 14px;
+    border-radius: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background-color: transparent;
+    & .btn__label {
+        display: inline-block;
+        width: 100%;
+        display: flex;
+        align-items: inherit;
+        justify-content: inherit;
+        position: relative;
+        z-index: 10;
+        & .btn__label__icon {
+            margin-right: 0px;
+            display: inline-block;
+            width: 100%;
+            display: flex;
+            align-items: inherit;
+            justify-content: inherit;
+            position: relative;
+            z-index: 10;
+            top: 0px;
+        }
+    }
+}
+
+.btn-icon-default {
+    @include btnIconColor(
+        $black,
+        rgba($default, 0.3),
+        rgba($default, 0.3),
+        0 0 0 0.125em rgba($default, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-icon-warning {
+    @include btnIconColor(
+        $warning,
+        rgba($warning, 0.3),
+        rgba($warning, 0.3),
+        0 0 0 0.125em rgba($warning, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-icon-primary {
+    @include btnIconColor(
+        $primary,
+        rgba($primary, 0.3),
+        rgba($primary, 0.3),
+        0 0 0 0.125em rgba($primary, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-icon-success {
+    @include btnIconColor(
+        $success,
+        rgba($success, 0.3),
+        rgba($success, 0.3),
+        0 0 0 0.125em rgba($success, 0.5),
+        none,
+        none
+    );
+}
+
+.btn-icon-info {
+    @include btnIconColor($info, rgba($info, 0.3), rgba($info, 0.3), 0 0 0 0.125em rgba($info, 0.5), none, none);
+}
+
+.btn-icon-danger {
+    @include btnIconColor(
+        $danger,
+        rgba($danger, 0.3),
+        rgba($danger, 0.3),
+        0 0 0 0.125em rgba($danger, 0.5),
+        none,
+        none
+    );
+}

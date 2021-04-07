@@ -1,0 +1,59 @@
+@import '../../../atoms/color/index.scss';
+.modal {
+    position: fixed;
+    z-index: 5000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    .modal-content {
+        display: block;
+        background-color: $white;
+        margin: auto;
+        padding: 20px;
+        width: 50%;
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        position: relative;
+        @media (max-width: 640px) {
+            width: 95%;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid $default;
+            margin-bottom: 20px;
+            padding-bottom: 7px;
+            align-items: baseline;
+            button {
+                background-color: transparent;
+                padding: 0;
+                svg {
+                    fill: $darkGrey;
+                    height: 13px;
+                }
+            }
+        }
+        input {
+            width: 100%;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    &.confirm-container {
+        .modal-header {
+            border: none !important;
+        }
+        .confirm-groupbtn {
+            float: right;
+            button {
+                margin-left: 10px;
+            }
+        }
+    }
+}

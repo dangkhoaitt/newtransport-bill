@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Login to CMS</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <style>
+            body {
+                background: #0c4da2;
+                margin: 0;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                min-height: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .panel__link {
+                text-align: center;
+                display: block;
+                font-size: 30px;
+            }
+            .panel__forms form {
+                margin: 0;
+            }
+            .panel {
+                position: relative;
+                z-index: 1;
+                background: #fff;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+                -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+                -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+                width: 80%;
+                padding: 95px 30px;
+            }
+            @media (min-width: 500px) {
+                .panel {
+                    padding: 95px 45px;
+                    width: 350px;
+                }
+            }
+            .form__row {
+                position: relative;
+                padding-top: 45px;
+                color: #555555;
+            }
+            .form__input {
+                width: 100%;
+                padding: 5px 0;
+                border: none;
+                border-bottom: 1px solid #555555;
+                background: none;
+            }
+            .form__input:focus,
+            .form__input:active {
+                outline: 0;
+            }
+            .form__input:focus ~ .form__bar,
+            .form__input:active ~ .form__bar {
+                left: 0;
+                right: 0;
+                width: 100%;
+            }
+            .form__bar {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                right: 50%;
+                display: block;
+                width: 0;
+                height: 2px;
+                background: -webkit-linear-gradient(right, #b721ff, #21d4fd);
+                transition: all 0.3s;
+            }
+            .form__label {
+                position: absolute;
+                bottom: 30px;
+                left: 0;
+                width: 100%;
+                transition: all 0.3s;
+                pointer-events: none;
+                font-size: 14px;
+            }
+            .form__row_submit {
+                width: 100%;
+                display: block;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+                border-radius: 25px;
+                margin: 0 auto;
+            }
+            .form__submit {
+                font-size: 15px;
+                color: #fff;
+                line-height: 1.2;
+                text-transform: uppercase;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 20px;
+                width: 100%;
+                height: 50px;
+                background-color: #ffffff00;
+                outline: none;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+            }
+            .form__row_submit:hover .submit__hover {
+                left: 0;
+            }
+            .submit__hover {
+                position: absolute;
+                z-index: -1;
+                width: 300%;
+                height: 50px;
+                background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+                background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+                background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+                background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+                top: 0px;
+                left: -100%;
+                -webkit-transition: all 0.4s;
+                -o-transition: all 0.4s;
+                -moz-transition: all 0.4s;
+                transition: all 0.4s;
+            }
+            .form__row input:-webkit-autofill,
+            .form__row input:-webkit-autofill:hover,
+            .form__row input:-webkit-autofill:focus {
+                -webkit-text-fill-color: #222;
+                box-shadow: transparent inset;
+                -webkit-box-shadow: transparent inset;
+                transition: background-color 5000s ease-in-out 0s;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body class="login-body">
+        <div class="panel">
+            <div class="panel__form-wrapper">
+                <a class="panel__link" role="button">Đăng nhập</a>
+                <div class="panel__forms">
+                    <form id="login-form" class="form panel__login-form" id="login-form" method="post" action="/login">
+                        <div class="form__row">
+                            <input type="text" id="email" class="form__input" name="username" required autofocus />
+                            <span class="form__bar"></span>
+                            <label for="email" class="form__label">Tài khoản</label>
+                        </div>
+                        <div class="form__row">
+                            <input type="password" id="password" class="form__input" name="password" required />
+                            <span class="form__bar"></span>
+                            <label for="password" class="form__label">Mật khẩu</label>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__row_submit">
+                                <div class="submit__hover"></div>
+                                <input type="submit" class="form__submit" value="Đăng nhập" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href)
+    }
+    const form = document.getElementById('login-form')
+    if (form) form.action = '/login' + location.search
+    const error = document.getElementsByName('error')[0]
+    if (error) {
+        Toastify({
+            text: error.getAttribute('content'),
+            backgroundColor: '#ff1552',
+            duration: 2000
+        }).showToast()
+    }
+</script>

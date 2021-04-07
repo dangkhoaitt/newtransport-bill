@@ -1,0 +1,338 @@
+@import '../../../../atoms//color/index.scss';
+@import '../../bill-detail/style/index.scss';
+
+.bill-form-create {
+    label,
+    textarea,
+    input,
+    .selected-value {
+        font-size: 14px;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form-bill-err {
+    color: $danger;
+    font-weight: 400;
+    font-size: 14px;
+}
+.group-info {
+    .card {
+        width: 100%;
+        &:last-child {
+            margin-top: 5px;
+        }
+    }
+    @media (min-width: 950px) {
+        width: calc(50% - 5px);
+    }
+}
+.bill-form-groupbtn {
+    margin-top: 10px;
+    width: 100%;
+    text-align: end;
+    .btn-danger {
+        margin-right: 10px;
+    }
+}
+.card.bill-form-item {
+    &.setting-inventory {
+        background-color: unset;
+        & > .card.bill-form-item {
+            width: 100%;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .dropdown-container .data-list {
+                top: unset;
+                bottom: calc(100% + 1px);
+            }
+        }
+    }
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: block;
+    width: 100%;
+    background-color: $white;
+    box-shadow: none;
+    @media (min-width: 600px) {
+        width: calc(50% - 1px);
+    }
+    @media (min-width: 950px) {
+        width: calc(100% / 3 - 1px);
+    }
+    &.bill-form-receiveInfo .card-content {
+        height: calc(100% - 45px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    &.bill-info {
+        width: 100%;
+        .custom-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .input-validate {
+                display: flex;
+                width: 100%;
+                @media (min-width: 570px) {
+                    width: 50%;
+                }
+                @media (min-width: 800px) {
+                    width: 33%;
+                }
+                label {
+                    position: static;
+                    width: 150px;
+                    padding: 7px 0;
+                }
+                .infor-value {
+                    padding: 7px 0;
+                }
+            }
+        }
+    }
+    &.bill-service {
+        .card-content {
+            overflow-y: scroll;
+            height: 100%;
+            max-height: 255px;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $grey;
+            }
+        }
+    }
+    .bill-service-extra {
+        margin-top: 10px;
+        & > label {
+            color: #343a40;
+            white-space: nowrap;
+            font-weight: 500 !important;
+        }
+        .custom-form {
+            display: block;
+            justify-content: space-between;
+            @media (min-width: 375px) {
+                display: flex;
+            }
+            .input-price-extra > div {
+                width: 100%;
+                .input input {
+                    text-align: right;
+                }
+            }
+            .input-validate.input-item {
+                label {
+                    font-weight: 400;
+                }
+                &:last-child {
+                    label {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .value-extra-service {
+            margin-left: 10px;
+            box-sizing: border-box;
+            border: 0;
+            outline: none;
+            border-bottom: 1px solid $grey;
+            &::placeholder {
+                color: $grey;
+            }
+        }
+    }
+    &.bill-form-price {
+        .custom-form {
+            display: flex;
+            flex-wrap: wrap;
+            .input-validate {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                &.weight-input {
+                    width: 75%;
+                    padding-right: 10px;
+                    & > div {
+                        width: calc(100% - 120px);
+                    }
+                }
+                &.weight-unit-input {
+                    width: 25%;
+                    label {
+                        display: none;
+                    }
+                }
+                &.price-input {
+                    margin-top: 30px;
+                    font-weight: 600;
+                    input {
+                        font-weight: 600;
+                        font-size: 15px;
+                        color: #ff0000;
+                    }
+                }
+            }
+        }
+    }
+    &.bill-form-goods {
+        button {
+            float: right;
+        }
+        .goods-group-value {
+            width: 100%;
+            display: flex;
+            div:first-child {
+                width: 100%;
+            }
+            .btn-icon-default {
+                padding: 0;
+                &:hover {
+                    background: none;
+                }
+            }
+        }
+        .custom-form {
+            display: flex;
+            flex-wrap: wrap;
+            .input-validate {
+                width: calc(100% / 3);
+                display: flex;
+                flex-wrap: wrap;
+                svg {
+                    height: 8px;
+                }
+                .selected-value {
+                    padding-right: 0;
+                }
+                label {
+                    display: none;
+                }
+                &:nth-child(1) {
+                    width: calc(42% - 63px);
+                    padding-right: 5px;
+                }
+                &.btn-delete-goods {
+                    padding: 0;
+                    width: 100%;
+                    svg {
+                        height: 12px;
+                    }
+                    & > div {
+                        width: 100%;
+                        display: flex;
+                    }
+                }
+                &:nth-child(2) {
+                    width: 63px;
+                }
+                &:nth-child(3) {
+                    width: 58%;
+                }
+            }
+        }
+        .card-content {
+            overflow-y: scroll;
+            height: 100%;
+            max-height: 330px;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $grey;
+            }
+        }
+    }
+    .card-content {
+        padding: 12px;
+        .input-validate {
+            margin: 5px 0;
+            &.bill-seting-status {
+                margin-bottom: 20px;
+            }
+            label {
+                position: relative;
+                top: 0;
+                white-space: break-spaces;
+            }
+            @media (min-width: 768px) {
+                display: flex;
+                label {
+                    top: 10px;
+                }
+            }
+            @media (min-width: 950px) {
+                display: block;
+                label {
+                    top: 0;
+                }
+            }
+            @media (min-width: 1270px) {
+                display: flex;
+                flex-wrap: wrap;
+                label {
+                    top: 10px;
+                }
+            }
+            &.input-item {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                & > div {
+                    flex-grow: 0;
+                }
+            }
+            label {
+                font-family: Roboto, Segoe UI, GeezaPro, 'DejaVu Serif', 'sans-serif', -apple-system, BlinkMacSystemFont;
+                font-weight: 500;
+                white-space: nowrap;
+                min-width: 120px;
+            }
+            .checkbox {
+                min-width: 35px;
+            }
+            & > div {
+                flex-grow: 1;
+                position: relative;
+                input,
+                .input {
+                    width: 100%;
+                }
+                .btn-primary {
+                    padding: 3px 12px;
+                    position: absolute;
+                    top: -3px;
+                    right: 0;
+                }
+            }
+        }
+    }
+    .card-header {
+        width: 100%;
+        border-bottom: 1px solid $borderLine;
+        font-weight: 600;
+        background-color: $bgPagination;
+        .bill-customer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .btn-search-customer {
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}

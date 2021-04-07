@@ -1,0 +1,20 @@
+{
+    "userFields": {
+        "code": "Mã nhân viên ",
+        "name": "Họ tên",
+        "tel": "Số điện thoại",
+        "email": "Email",
+        "birthday": "Ngày sinh",
+        "insertTime": "Ngày tạo",
+        "role": "Phân quyền",
+        "updateTime": "Ngày chỉnh sửa",
+        "username": "Tên đăng nhập",
+        "field": "Trường chỉnh sửa",
+        "oldValue": "Nội dung cũ",
+        "newValue": "Nội dung mới",
+        "collection": "Danh mục thực hiện",
+        "action": "Hoạt động",
+        "address": "Địa chỉ",
+        "unit": "Đơn vị"
+    }
+}

@@ -1,0 +1,63 @@
+@import '../../../../atoms/color/index.scss';
+
+#bill-table {
+    .table tbody > tr > .table__th__cell > a {
+        color: $primary;
+        font-weight: 500;
+        margin: 8px 0;
+    }
+}
+.list-mobile-bill {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .card {
+        margin-bottom: 20px;
+        width: calc(50% - 6px);
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+        margin-bottom: 12px;
+        .card-header {
+            border-bottom: inset 0.5px;
+            width: 100%;
+            .card-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a {
+                    font-weight: 600;
+                    text-decoration: none;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    text-overflow: ellipsis;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+        }
+        .card-content {
+            .input-validate {
+                display: flex;
+            }
+            width: 100%;
+            padding: 12px;
+            .input-item {
+                display: flex;
+                justify-content: space-between;
+                @media (max-width: 425px) {
+                    width: 100%;
+                }
+                .label-item {
+                    font-weight: 500;
+                    white-space: nowrap;
+                    margin-right: 10px;
+                    margin: 4px 0px 4px 0px;
+                }
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

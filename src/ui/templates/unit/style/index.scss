@@ -1,0 +1,124 @@
+@import '../../../atoms/color/index.scss';
+#unit-detail {
+    .btn-detail {
+        position: absolute;
+        right: 0;
+        top: 0;
+        @media (max-width: 390px) {
+            position: relative;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .btn {
+            margin-left: 5px;
+        }
+    }
+    .card {
+        margin-top: 12px;
+        .switch-action {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+            right: 10px;
+            z-index: 10;
+            align-items: center;
+            & > button {
+                width: 50px;
+            }
+            span {
+                margin-left: 10px;
+                font-size: large;
+            }
+        }
+        .card-header {
+            background-color: $bgPagination;
+            font-size: 18px;
+            .card-title {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                button {
+                    width: 54px;
+                }
+            }
+        }
+        .card-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 12px;
+            .user-input-item {
+                width: 100%;
+                @media (min-width: 640px) {
+                    width: 49%;
+                }
+                padding: 12px 0px;
+                display: flex;
+                justify-content: space-between;
+                .label-item {
+                    margin-right: 10px;
+                    @media (min-width: 640px) {
+                        margin-right: 0;
+                        width: 170px;
+                    }
+                    font-weight: 500;
+                    white-space: nowrap;
+                }
+                .value-item {
+                    word-break: break-all;
+                    line-height: 20px;
+                    text-align: right;
+                    @media (min-width: 640px) {
+                        width: calc(100% - 120px);
+                        text-align: left;
+                    }
+                }
+            }
+        }
+
+        #bill-table,
+        #member-list {
+            width: 100%;
+            table {
+                tbody {
+                    a {
+                        margin: 0;
+                        font-weight: 500;
+                    }
+                    tr {
+                        td {
+                            a,
+                            span,
+                            div {
+                                word-break: break-all;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 1;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tab-container {
+        margin-top: 12px;
+        .tab-content {
+            padding: 0;
+            .card-content {
+                padding: 0;
+            }
+        }
+        .tab-title-selected {
+            border-bottom: 1px $primary solid;
+            // border-bottom-width: 0px;
+            background-color: $white !important;
+        }
+        .tab-title-item {
+            background-color: $grey;
+        }
+    }
+}

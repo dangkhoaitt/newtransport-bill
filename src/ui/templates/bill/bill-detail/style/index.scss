@@ -1,0 +1,164 @@
+#bill-detail {
+    .btn-detail {
+        position: absolute;
+        right: 0;
+        top: 0;
+        @media (max-width: 390px) {
+            position: relative;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .btn {
+            margin-left: 5px;
+        }
+    }
+    .bill-card-detail {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+.btn:disabled {
+    cursor: not-allowed;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.25);
+    background-color: #c1c1c1;
+}
+.card.card-bill-detail-item {
+    &.card-inventory {
+        background-color: unset;
+        & > .card.card-bill-detail-item {
+            width: 100%;
+            .card-content {
+                .input-validate {
+                    width: 100%;
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    display: block;
+    margin-bottom: 6px;
+    width: 100%;
+    @media (min-width: 768px) {
+        width: calc(50% - 4px);
+    }
+    @media (min-width: 1300px) {
+        width: 33%;
+    }
+    &:first-child {
+        width: 100%;
+        .card-content {
+            @media (min-width: 768px) {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .input-validate {
+                    width: calc(50% - 20px);
+                }
+            }
+        }
+    }
+    &.detail-receiver .card-content {
+        height: calc(100% - 45px);
+        display: flex;
+        flex-direction: column;
+    }
+    &.bill-service-item {
+        .value-item {
+            width: 100%;
+            .service-extra-value {
+                display: flex;
+                justify-content: space-between;
+            }
+            &:first-child {
+                .value-item .service-value {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+            .label-item {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+        .input-validate {
+            @media (max-width: 480px) {
+                display: block !important;
+            }
+        }
+        .service-value {
+            a {
+                margin-right: 10px;
+            }
+            .service-extra-value {
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &.bill-goods-item {
+        label {
+            display: none;
+        }
+        .goods-value {
+            text-align: start;
+            width: 100%;
+            line-height: 1.8;
+            list-style: inside;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    .card-header {
+        border-bottom: inset 0.5px;
+        width: 100%;
+        .card-title {
+            display: flex;
+            justify-content: space-between;
+            a {
+                font-weight: 600;
+                text-decoration: none;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                text-overflow: ellipsis;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+    }
+    .card-content {
+        width: 100%;
+        padding: 12px;
+        .input-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            @media (max-width: 425px) {
+                width: 100%;
+            }
+            .bill-price {
+                color: red;
+                font-weight: 500;
+            }
+            .value-item {
+                text-align: right;
+            }
+            .label-item {
+                font-weight: 500;
+                white-space: nowrap;
+                margin-right: 10px;
+            }
+            a {
+                text-decoration: none;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

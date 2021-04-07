@@ -1,0 +1,99 @@
+@import '../../../../atoms/color/index.scss';
+#user-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .table {
+        word-break: break-all;
+        .thead > tr > {
+            th {
+                border-right: 1px solid $borderLine;
+            }
+        }
+    }
+    .search-switch {
+        display: flex;
+        position: absolute;
+        top: 52px;
+        right: 10px;
+        z-index: 10;
+        align-items: center;
+        & > button {
+            width: 60px;
+        }
+        label {
+            margin-right: 10px;
+        }
+    }
+    .container-fluid {
+        background-color: $white;
+        border: none;
+        .collapsible-content {
+            position: relative;
+        }
+        .forms {
+            margin-bottom: 15px;
+
+            .form-user-search {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                .input-item {
+                    width: 100%;
+                    margin-top: 20px;
+                    @media (min-width: 600px) {
+                        width: calc(50% - 10px);
+                    }
+                    @media (min-width: 1024px) {
+                        width: calc(100% / 4 - 10px);
+                    }
+                }
+            }
+        }
+        .btn-user-search {
+            text-align: right;
+            margin-top: 10px;
+            @media (min-width: 600px) {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+    & > .btn-primary {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .card {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        @media (min-width: 600px) {
+            width: calc(50% - 6px);
+        }
+        .card-header {
+            padding: 0;
+            font-weight: 500;
+            width: 100%;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid $borderLine;
+        }
+        .card-content {
+            .user-input-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 18px;
+                .label-item {
+                    font-weight: 500;
+                    white-space: nowrap;
+                    margin-right: 10px;
+                }
+                .value-item {
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}

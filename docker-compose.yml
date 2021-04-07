@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    newtransport-bill:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: newtransport-bill
+        container_name: newtransport-bill
+        environment:
+            - PORT=7003
+            - BASE_API_URL=cms-api-dev.giaonhanhanghoa.xyz
+        ports:
+            - '7003:7003'
+        restart: unless-stopped
+        volumes:
+            - $HOME/logs:/home/ubuntu/logs

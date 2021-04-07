@@ -1,0 +1,90 @@
+@import '../../../atoms/color/index.scss';
+/*! component's theme wise override material-definitions and variables */
+/*! card layout */
+.card {
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    font-family: 'Roboto', 'Segoe UI', 'GeezaPro', 'DejaVu Serif', 'sans-serif', '-apple-system', 'BlinkMacSystemFont';
+    font-size: 15px;
+    -ms-flex-pack: center;
+    justify-content: center;
+    line-height: 36px;
+    min-height: 36px;
+    position: relative;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    width: 100%;
+}
+.card > * {
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.card > .card-header-title {
+    box-sizing: border-box;
+    font-size: 15px;
+    line-height: normal;
+    padding: 12px;
+}
+.card > .card-title + :not(.card-title) {
+    margin-top: 0;
+    padding-top: 0;
+}
+.card > .card-header-title,
+.card > .card-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card .card-header {
+    box-sizing: border-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: center;
+    justify-content: center;
+    line-height: normal;
+    min-height: 22.5px;
+    padding: 12px;
+    width: inherit;
+}
+.card .card-header .card-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+.card .card-header .card-header-caption {
+    -ms-flex-item-align: center;
+    align-self: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0 0 0 12px;
+}
+.card .card-header .card-header-caption:first-child {
+    padding: 0;
+}
+.card .card-header .card-header-caption .card-header-title {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+}
+.card .card-content,
+.card .card-content p {
+    line-height: normal;
+    text-overflow: ellipsis;
+}
+/*! card theme */
+.card {
+    -webkit-tap-highlight-color: transparent;
+    background-color: $white;
+    border: 1px none $black;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+    color: rgba(0, 0, 0, 0.87);
+    outline: none;
+}

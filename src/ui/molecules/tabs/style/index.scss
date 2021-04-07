@@ -1,0 +1,45 @@
+@import '../../../atoms/color/index.scss';
+.tab-container {
+    background: $white;
+    width: 100%;
+    font-size: 16px;
+    .tab-title {
+        display: flex;
+        background: $bgLinkPagination;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        .tab-title-item {
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            border: 1px solid transparent;
+            padding: 5px 10px;
+            outline: none;
+            display: flex;
+            align-items: center;
+            .tab-title-icon {
+                margin-right: 5px;
+            }
+            &.tab-title-selected {
+                background: $white;
+                color: $primary;
+                fill: $primary;
+            }
+        }
+    }
+    .tab-content {
+        padding: 5px 10px;
+        .tab-content-item {
+            display: none;
+            &.tab-content-selected {
+                display: block;
+            }
+        }
+    }
+}

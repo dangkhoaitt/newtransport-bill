@@ -1,0 +1,70 @@
+@import '../../../../atoms/color/index.scss';
+.modal.modal-create-progress {
+    .modal-content {
+        width: 95%;
+        @media (max-width: 479px) {
+            padding: 10px;
+        }
+        @media (min-width: 1024px) {
+            width: 900px;
+        }
+        input {
+            margin: 0;
+        }
+        .progress-form-create {
+            .card {
+                margin-bottom: 10px;
+                box-shadow: none;
+                .card-content {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    padding: 12px;
+                    .form-container {
+                        @media (min-width: 480px) {
+                            display: flex;
+                            label {
+                                position: relative;
+                                top: 10px;
+                            }
+                        }
+                        margin-bottom: 15px;
+                        width: 100%;
+                        @media (min-width: 768px) {
+                            width: 49%;
+                        }
+                        .form-label {
+                            width: 140px;
+                            font-weight: 500;
+                            white-space: nowrap;
+                        }
+                        & > .form-value {
+                            width: 100%;
+                            margin-top: 5px;
+                            @media (min-width: 480px) {
+                                margin-top: 0;
+                                width: calc(100% - 140px);
+                            }
+                        }
+                    }
+                }
+            }
+            & > button {
+                float: right;
+                &:disabled {
+                    cursor: not-allowed;
+                    user-select: none;
+                    color: rgba(0, 0, 0, 0.25);
+                    background-color: $default;
+                }
+                margin-left: 12px;
+            }
+        }
+    }
+}
+.modal.modal-create-detail {
+    .card .card-content .form-parent {
+        display: none !important;
+    }
+}

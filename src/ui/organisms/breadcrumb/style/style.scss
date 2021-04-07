@@ -1,0 +1,35 @@
+@import '../../../../ui/atoms/color/index.scss';
+.breadcrumb {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -4px;
+    .breadcrumb-item {
+        display: inline-block;
+        margin-right: 7px;
+        a,
+        a i {
+            font-size: 16px;
+            text-decoration: none;
+            color: $dark;
+            &:hover {
+                color: $primary;
+            }
+        }
+        + .breadcrumb-item:before {
+            padding: 2px;
+            font-size: 16px;
+            color: $primary;
+            content: '/\00a0';
+        }
+        &:last-child {
+            margin-right: 0;
+            color: $primary;
+            a,
+            a i {
+                color: $primary;
+            }
+        }
+    }
+}

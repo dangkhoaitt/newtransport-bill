@@ -1,0 +1,139 @@
+@import '../../../atoms/color/index.scss';
+@mixin transition {
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+#drawer-toggle {
+    position: absolute;
+    opacity: 0;
+    &.show-sidebar {
+        ~ {
+            #drawer-toggle-label {
+                @media (max-width: 768px) {
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.5);
+                    height: 100%;
+                }
+                left: 200px;
+            }
+            #drawer {
+                left: 0px;
+            }
+            #page-content {
+                padding-left: 210px;
+            }
+        }
+    }
+}
+#drawer-toggle-label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    left: 0;
+    top: 0;
+    height: 48px;
+    width: 48px;
+    display: block;
+    position: fixed;
+    background: rgba(255, 255, 255, 0);
+    z-index: 300;
+    cursor: pointer;
+    @include transition;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 24px;
+        background: $white;
+        left: 10px;
+        top: 15px;
+        box-shadow: 0 8px 0 $white, 0 16px 0 $white;
+    }
+}
+#drawer {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    height: 100%;
+    width: 200px;
+    background: $primary;
+    z-index: 200;
+    @include transition;
+    .logo {
+        height: 32px;
+        color: $primary;
+        margin: 8px 15px;
+        text-transform: uppercase;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background: $white;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            padding: 0 15px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
+            height: 50px;
+            line-height: 50px;
+            color: $default;
+            display: flex;
+            .drawer-icon {
+                svg {
+                    transition: 0s;
+                    fill: $white;
+                }
+            }
+            a {
+                padding-left: 10px;
+                color: $default;
+                text-decoration: none;
+                font-size: 13px;
+                width: 100%;
+                display: block;
+                transition: 0s;
+                &:hover {
+                    color: $white;
+                }
+            }
+            &.menu-link-active {
+                background: $white;
+                @include transition;
+                .drawer-icon {
+                    svg {
+                        fill: $primary;
+                    }
+                }
+                a {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+#page-content {
+    @include transition;
+    @media (min-width: 769px) {
+        margin-top: 48px;
+    }
+    width: 100%;
+    min-height: calc(100vh - 48px);
+    padding: 10px;
+    .sidebar-menu-content {
+        position: relative;
+    }
+}

@@ -1,0 +1,73 @@
+@import '../../../../atoms//color/index.scss';
+
+.bill-form-edit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .btn-primary {
+        &:disabled {
+            cursor: not-allowed;
+            user-select: none;
+            color: rgba(0, 0, 0, 0.25);
+            background-color: #d1d1d1;
+            border-color: #c1c1c1;
+            -webkit-box-shadow: inset 0 3px 5px #c1c1c1;
+            box-shadow: inset 0 3px 5px #c1c1c1;
+        }
+    }
+    input,
+    textarea,
+    .selected-value {
+        font-size: 14px;
+    }
+    .bill-form-item {
+        width: 100%;
+        @media (min-width: 768px) {
+            width: calc(50% - 4px);
+        }
+        @media (min-width: 1300px) {
+            width: 33%;
+        }
+    }
+    .bill-form-item.bill-info {
+        width: 100%;
+    }
+    label,
+    .bill-service-extra {
+        margin-bottom: 6px;
+        font-weight: 500;
+        white-space: nowrap;
+        .service-value {
+            margin-top: 10px;
+            padding-left: 20px;
+            .service-extra-value {
+                font-weight: 400;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+    .bill-service-extra label {
+        font-weight: 400;
+    }
+    .card-header {
+        background-color: #f7f7f7;
+        font-weight: 400;
+    }
+    .bill-goods-item {
+        .card-content {
+            overflow-y: scroll;
+            max-height: 180px;
+            margin-bottom: 12px;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $grey;
+            }
+        }
+    }
+}
